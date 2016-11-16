@@ -1,0 +1,53 @@
+{
+	"env": {
+		"es6": true,
+		"browser": true,
+		"commonjs": true,
+		"node": true,
+		"amd": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module"
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"indent": [
+			2,
+			"tab"
+		],
+		"quotes": [
+			"error",
+			"single"
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"curly": [ "error", "multi-or-nest" ],
+		"no-alert": "error",
+		"no-eval": "error",
+		"no-implied-eval": "error",
+		"no-extend-native": "error",
+		"no-native-reassign": "error",
+		"no-magic-numbers": [ "warn", { "ignoreArrayIndexes": true } ],
+		"no-new-wrappers": "error",
+		"no-proto": "error",
+		"no-redeclare": "error",
+		"no-self-assign": "error",
+		"no-unmodified-loop-condition": "error",
+		"no-with": "error",
+		"no-use-before-define": "error",
+		"array-bracket-spacing": [ "error", "always" ],
+		"object-curly-spacing": [ "error", "always" ],
+		"max-len": [ "error", 150, 4 ],
+		"no-multiple-empty-lines": [ "error", { "max": 2, "maxEOF": 1, "maxBOF": 0 } ],
+		"no-trailing-spaces": [ "warn", { "skipBlankLines": true } ],
+		"no-duplicate-imports": "error",
+		"prefer-arrow-callback": "warn",
+		"prefer-const": "warn",
+		"prefer-rest-params": "warn",
+		"no-unused-vars": [ "error", { "args": "none" } ],
+		"no-console": [ "error", { "allow": [ "error" ] } ]
+	}
+}
