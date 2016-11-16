@@ -3,7 +3,27 @@ html
 	head
 		title= title
 		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 		block styles
 	body
+
+		nav(class='navbar navbar-default')
+				div(class='container-fluid')
+					div(class='navbar-header')
+						a(href='/index' class='navbar-brand') List Creator
+					div
+						ul(class='nav navbar-nav')
+							li(id='navigation-home')
+								a(href='/index') Home
+							li(id='navigation-list')
+								a(href='/list/') My Lists
+							li(id='navigation-create')
+								a(href='/list/create') Create List
 		block content
+			
+		script(src='https://code.jquery.com/jquery-1.12.4.js')
+		script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js')
 		block scripts
+			
+			
