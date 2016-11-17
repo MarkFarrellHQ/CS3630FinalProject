@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 Promise.resolve()
 .then(() => {
 	return new Promise((resolve, reject) => {
-		mongoose.connect('mongodb://localhost:27017');
+		mongoose.connect('mongodb://localhost/local');
 		const db = mongoose.connection;
 		db.on('error', (...args) => {
 			console.error('connection error:', ...args);

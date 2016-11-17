@@ -11,3 +11,34 @@ a {
   text-align: center;
   margin-top: 50px;
 }
+
+.list-background{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffe7dd;
+}
+
+.list-container{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  text-align: right;
+}
+
+.list-item{
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+
+.btn-container{
+  text-align: left;
+}
+
+.btn-delete{
+  color: red;
+  border: none;
+  background-color: #ffe7dd;
+}
