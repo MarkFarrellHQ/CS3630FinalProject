@@ -1,21 +1,39 @@
 $('#navigation-list').addClass('active');
 
-// const ViewModel = (() => {
-// 	const _lists = new WeakMap();
-//     const _id = new WeakMap();
+//Query Database to populate lists[]
+let lists = [];
 
-// 	class ViewModel {
-// 		get Lists() {return _lists.get(this);}
-//         get Id() {return _lists.get(this);}
+function handleData(data){
+	lists = JSON.parse(JSON.stringify(data));
+	CreateUI();
+}
 
-// 		constructor(list){
-// 			const mappedList = list.map(l => {
-// 				return { name: ko.observable(l.name) };
-// 			});
-// 			_lists.set(this, ko.observableArray(mappedList));
-// 		}
-// 	}
-// 	return ViewModel;
-// })();
+function loadData(){
+	$.ajax({
+		url: '/list/load',
+		type: 'GET',
+		success: handleData
+	});
+}
 
-// ko.applyBindings(new ViewModel());
+loadData();
+
+
+//Create the UI
+function CreateUI(){
+	$('.list-background').append($( `<div class='list-container data-bind='foreach: observeLists'></div>`));
+
+	for(let i = 0; i < lists.length; i++){
+		$('.list-container').append($(`<div class='row' id='list-item-${i}'>
+							<div class='col-md-8'>
+							<a class='list-item' href='/edit/${lists[i]._id}'>${lists[i].name}</a></div>
+							<div class='col-md-4'>
+							<button type='submit' class='btn-delete'>X</button></div></div>`));
+	}
+}
+
+const ViewModel = {
+	observeLists: ko.observableArray(lists)
+};
+
+ko.applyBindings(ViewModel);

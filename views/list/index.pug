@@ -2,14 +2,7 @@ extends ../layout
 
 block content
     div(class='list-background')
-        div(class='list-container')
-            each list in lists
-                div(class='row')
-                    div(class='col-md-8')
-                        a(class='list-item' href="/edit/" + list.id) #{list.name}
-                    div(class='col-md-4')
-                        form(class='btn-container' method="POST", action="/list/delete/" + list.id)
-                            button(type="submit" class='btn-delete') X
+        
 
 block scripts
     script(src='/javascripts/lists.js')

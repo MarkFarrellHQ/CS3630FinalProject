@@ -17,12 +17,22 @@ router.get('/', (req, res, next) => {
 			return next(err);
 		res.render('list/index', { lists });
 	});
-	
-	
+
 });
 
 router.get('/create', (req, res, next) => {
 	res.render('list/create', {});
+});
+
+router.get('/load', (req, res, next) => {
+	console.log('i made it to the load call');
+	ListModel.find({}, (err, list) => {
+		if(err)
+			return next(err);
+		console.log(list);
+		res.send(list);
+		
+	});
 });
 
 module.exports = router;
