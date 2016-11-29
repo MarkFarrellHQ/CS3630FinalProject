@@ -25,7 +25,6 @@ router.get('/create', (req, res, next) => {
 });
 
 router.get('/load', (req, res, next) => {
-	console.log('i made it to the load call');
 	ListModel.find({}, (err, list) => {
 		if(err)
 			return next(err);
@@ -33,6 +32,13 @@ router.get('/load', (req, res, next) => {
 		res.send(list);
 		
 	});
+});
+
+router.post('/api/delete', (req, res, next) => {
+
+	ListModel.find({ _id: req.body.id }).remove().exec();
+	// const pk = new mongoose.ObjectId(req.body.id);
+	// ListModel.remove({ _id: pk });
 });
 
 module.exports = router;

@@ -23,7 +23,8 @@ a {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   text-align: right;
 }
 
@@ -41,4 +42,5 @@ a {
   color: red;
   border: none;
   background-color: #ffe7dd;
+  font-size: 25px;
 }
