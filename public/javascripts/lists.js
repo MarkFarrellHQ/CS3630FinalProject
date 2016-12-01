@@ -7,7 +7,7 @@ let currentPrimaryKey = '';
 function handleData(data){
 	lists = JSON.parse(JSON.stringify(data));
 	for(let i = 0; i < lists.length; i++){
-		lists[i].url = `/edit/${lists[i]._id}`;
+		lists[i].url = `/list/edit/${lists[i]._id}`;
 		lists[i].confirmDelete = function(){
 			$('#confirmDeleteModal').modal('show');
 			setCurrentPrimaryKey(lists[i]._id);
@@ -41,7 +41,7 @@ function CreateUI(){
 	$('.list-background').append($(`<div class='list-container' data-bind='foreach: observeLists'>
 										<div class='row'>
 											<div class='col-md-8'>
-												<a class='list-item' href='/edit/_id' data-bind='attr: { href: url }, text: name'> </a>
+												<a class='list-item' data-bind='attr: { href: url }, text: name'> </a>
 											</div>
 											<div class='col-md-4 btn-container'>
 												<button type='submit' class='btn-delete' data-bind='click: confirmDelete'>X</button>
