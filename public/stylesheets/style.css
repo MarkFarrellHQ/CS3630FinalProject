@@ -23,6 +23,13 @@ a {
   color: #999999;
 }
 
+.link-to-register{
+  font-size: 2em;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .list-background{
   width: 75%;
   margin-left: auto;
@@ -75,12 +82,6 @@ a {
   margin-left: auto;
 }
 
-.create-list-item{
-  color: #000000;
-  height: 50px;
-  font-size: 25px;
-}
-
 .row{
   width: 85%;
   margin-left: auto!important;
@@ -117,6 +118,17 @@ input.create-list-item:disabled {
   font-size: 25px;
 }
 
+.custom-input{
+  margin-bottom: 10px!important;
+  height: 40px!important;
+  background-color: #222222;
+  border-color: #333333!important
+}
+
+input.custom-input:disabled {
+  background-color: transparent;
+}
+
 .checkbox{
   width: 50%;
   margin-left: auto;
@@ -125,4 +137,26 @@ input.create-list-item:disabled {
 
 .create-list-item:disabled + button {
   display: hidden;
+}
+
+.register-header{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.register-container{
+  margin-top: 30px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-custom{
+  background-color: #3fe5ff;
+  border-color: #185963;
+  color: black;
+  width: 100%;
+  height: 40px;
+  margin-top: 15px;
+  font-size: 1.2em;
 }

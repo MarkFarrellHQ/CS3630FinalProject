@@ -29,7 +29,7 @@ Promise.resolve()
 .then(() => {
 	return new Promise((resolve, reject) => {
 		mongoose.Promise = Promise;
-		mongoose.connect('mongodb://localhost/local');
+		mongoose.connect('mongodb://localhost/CS3630');
 		const db = mongoose.connection;
 		db.on('error', (...args) => {
 			console.error('connection error:', ...args);

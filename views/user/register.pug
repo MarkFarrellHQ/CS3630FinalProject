@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+                    
+    h1(class='register-header')= 'Sign up for a free account to get started!'
+
+    div(class='register-container')
+        div(class='row')
+            div(class='col-md-2')
+            div(class='col-md-8')
+                form
+                    input(type='text' class='form-control custom-input' placeholder='Username' data-bind='textInput: username')
+                    input(type='password' class='form-control custom-input' placeholder='Password' data-bind='textInput: password')
+                    input(type='password' class='form-control custom-input' placeholder='Confirm Password' data-bind='textInput: confirmPassword')
+                    input(type='text' class='form-control custom-input' placeholder='Display Name' data-bind='textInput: displayName')
+            div(class='col-md-2')
+        div(class='row')
+            div(class='col-md-4')
+            div(class='col-md-4')
+                button(type='button' class='btn btn-custom' data-bind='click: register')= "Sign Up!"
+            div(class='col-md-4')
+    
+        
+
+block scripts
+    script(src='/javascripts/register.js')

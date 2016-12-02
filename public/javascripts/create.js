@@ -10,7 +10,7 @@ if(id !== ''){
 } else {
 	isNewList = true;
 }
-	
+
 
 const ViewModel = {
 	listName: ko.observable(),
@@ -19,13 +19,14 @@ const ViewModel = {
 	isEditing: false,
 	addItem: function(){
 		if(this.itemBeingAdded() !== ''){
-			this.observableListItems.push(this.itemBeingAdded());
+			this.observableListItems.push(ko.observable(this.itemBeingAdded()));
 			this.itemBeingAdded('');
 		} else {
 			//TODO: Yell at user for being an idiot
 		}
 	},
 	save: function(){
+		console.log(this.observableListItems());
 		if(isNewList){
 			operation = 'save';
 		} else {
@@ -70,7 +71,7 @@ function handleData(data){
 	const list = JSON.parse(JSON.stringify(data));
 	ViewModel.listName(list[0].name);
 	for(let i = 0; i < list[0].items.length; i++){
-		ViewModel.observableListItems.push(list[0].items[i]);
+		ViewModel.observableListItems.push(ko.observable(list[0].items[i]));
 	}
 	console.log(ViewModel.observableListItems());
 }

@@ -8,7 +8,7 @@ block content
                     input(type='checkbox' data-bind='click: changeEditMode ')  
                     | Edit Mode 
             div(class='col-md-7')
-                input(type='text' class='form-control' placeholder='Name your list' data-bind='textInput: listName')
+                input(type='text' class='form-control custom-input' placeholder='Name your list' data-bind='textInput: listName')
             div(class='col-md-3')
                 button(type='text' class='btn btn-success create-list-btns' data-bind='click: save')= 'Save'
         div(class='row')
@@ -18,12 +18,13 @@ block content
                     form(class='form-inline')
                         div(class='form-group')
                             button(type='submit' class='btn-delete' data-bind='click: $parent.startDelete' style='display: none')= 'X'
-                            input(type='text' class='form-control create-list-item' data-bind='textInput: $data' disabled)
+                            //- input(type='text' class='form-control create-list-item' data-bind='textInput: $parent[$index]' disabled)
+                            input(type='text' class='form-control create-list-item custom-input' data-bind='textInput: $rawData' disabled)
         div(class='row')
             div(class='col-md-2')
             div(class='col-md-7')
                 div(class='add-item-container')
-                    input(type='text' class='form-control add-item-form' data-bind='textInput: itemBeingAdded' placeholder='Item Name')
+                    input(type='text' class='form-control add-item-form custom-input' data-bind='textInput: itemBeingAdded' placeholder='Item Name')
                     div(class='add-item-btn-container')
                         button(type='button' class='btn btn-info create-list-btns' data-bind='click: addItem')= 'Add Item'
 

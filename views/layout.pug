@@ -2,8 +2,8 @@ doctype html
 html
 	head
 		title= title
-		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
 		block styles
 	body
 
@@ -19,6 +19,15 @@ html
 								a(href='/list/') My Lists
 							li(id='navigation-create')
 								a(href='/list/create') Create List
+						ul(class='nav navbar-nav navbar-right')
+							li(id='navigation-signup')
+								a(href='/user/register')
+									span(class='glyphicon glyphicon-user')
+									|  Sign Up
+							li(id='navigation-login')
+								a(href='/user/login')
+									span(class='glyphicon glyphicon-log-in')
+									|  Login
 		block content
 			
 		script(src='https://code.jquery.com/jquery-1.12.4.js')
